@@ -47,6 +47,7 @@ class StarterSite extends Timber\Site
         add_image_size('featured_md', 768, 384, true);
         add_image_size('featured_lg', 1300, 640, true);
         add_image_size('featured_xl', 1920, 1080, true);
+        add_image_size('featured_xxl', 2560, 1440, true);
         remove_action('wp_head', 'print_emoji_detection_script', 7);
         remove_action('wp_print_styles', 'print_emoji_styles');
         remove_filter('the_content', 'wpautop');

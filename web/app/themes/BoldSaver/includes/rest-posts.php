@@ -101,6 +101,7 @@ function rest_posts($data)
                     'imageMD' => fallbackString(get_the_post_thumbnail_url($id, 'featured_md')),
                     'imageLG' => fallbackString(get_the_post_thumbnail_url($id, 'featured_lg')),
                     'imageXL' => fallbackString(get_the_post_thumbnail_url($id, 'featured_xl')),
+                    'imageXXL' => fallbackString(get_the_post_thumbnail_url($id, 'featured_xxl')),
                     'imageFull' => fallbackString(get_the_post_thumbnail_url($id)),
                     'link' => fallbackString(get_the_permalink()),
                     'related' => relatedPosts(get_field('related_posts')),
@@ -109,7 +110,7 @@ function rest_posts($data)
                     'title' => html_entity_decode(get_the_title()),
                     'yoast' => array(
                         'description' => get_post_meta($id, '_yoast_wpseo_metadesc', true),
-                        'image' => get_the_post_thumbnail_url($id, 'featured_lg'),
+                        'image' => fallbackString(get_the_post_thumbnail_url($id, 'featured_lg')),
                         'slug' => get_post_field('post_name'),
                         'title' => get_post_meta($id, '_yoast_wpseo_title', true),
                     ),
